@@ -1,0 +1,1 @@
+Het energieverbruik van kleine aansluitingen. Gas tot en met een capaciteit van 40 m3/h en elektriciteit tot en met een capaciteit van 3x80 ampère.

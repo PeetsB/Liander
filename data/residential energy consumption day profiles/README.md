@@ -1,0 +1,1 @@
+De dagprofielen geven de fluctuatie door het jaar heen weer van het elektriciteits- en gasverbruik. U kunt er in zien wat de seizoensinvloeden zijn op het stook- en stroomgedrag van klanten. Oftewel: hoe is het standaardjaarverbruik uit de eerste datasets verspreid over het jaar. 

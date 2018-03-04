@@ -1,0 +1,1 @@
+Deze data bevat werkelijke verbruiksdata van rond de 80 adressen over 2013.

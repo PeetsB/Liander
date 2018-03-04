@@ -1,0 +1,1 @@
+De standaardjaarverbruiken van gas en elektriciteit voor vier woningtypes.
