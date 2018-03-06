@@ -1,12 +1,19 @@
 # load reaquired libraries
-library(ggplot2)
+if (!require("ggplot2")) {
+  install.packages("ggplot2")
+  library(ggplot2)
+}
+
 #Load the package or install if not present
 if (!require("RColorBrewer")) {
   install.packages("RColorBrewer")
   library(RColorBrewer)
 }
 
+# for Mac OS X
 setwd("~/R/Liander")
+# for Linux Mint LMDB2
+# setwd("/media/psf/Home/R/Liander")
 
 if(!exists("foo", mode="function")) source("read_csv_test.R")
 
@@ -21,11 +28,6 @@ options(scipen=999)  # turn off scientific notation like 1e+06
 #ggplot(MyData, aes(x=Datetime, y=Totaal)) +geom_point() +
 #  scale_y_continuous(breaks = round(seq(0, max(MyData$Totaal), by = 0.05),1))
 
-# for heat map add culomns
-# Date only
-Liander_E$Day <- as.Date(Liander_E$Datetime) 
-# Time in hours as numerical value
-Liander_E$Time <- as.numeric(format(as.POSIXct(Liander_E$Datetime) ,format = "%H") )
 
 # create heat map reference: https://benjaminlmoore.wordpress.com/tag/ggplot2/
 hm.palette <- colorRampPalette(rev(brewer.pal(11, 'Spectral')), space='Lab')
@@ -40,3 +42,4 @@ ggplot(Liander_E, aes(y=Time, x=Day)) +
                             by = "1 month"), date_labels ="%B") +
   theme(panel.background = element_blank(),
         plot.background = element_blank())
+
