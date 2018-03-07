@@ -10,7 +10,10 @@
 #   add new row and copy data from 2009-01-01 01:00
 #   and delete the last row which is 2010-01-01 00:00
 # - add columns "Date" (YYYY-MM-DD) and "Time" (HH) and 
-#   add column for Profile_Total_average_MJ = Profile_Total_MJ divided by 10000 houses
+# - add column for Profile_Total_average_kWh which is calculated by
+#     hour_fraction_G multiplied with an average natural gas consumption of 1500Nm3 per yer multiplied by
+#     the G-gas LCV of 35.17 MJ/Nm3 and divided by 3.6 to yield kWh per hour
+#     (kWh is required for comparison with electricity)
 #
 #####################################################################################
 
@@ -56,5 +59,8 @@ Liander_G <- head(Liander_G, -1)
 Liander_G$Date <- as.Date(Liander_G$Datetime) 
 # Time in hours as numerical value
 Liander_G$Time <- as.numeric(format(as.POSIXct(Liander_G$Datetime) ,format = "%H") )
-# add column for Profile_Total_average_kWh = Profile_Total_kWh divided by 10000 houses
-Liander_G$Profile_Total_average_MJ <- Liander_G$Profile_Total_MJ / 10000
+# add column for Profile_Total_average_kWh which is calculated by
+#     hour_fraction_G multiplied with an average natural gas consumption of 1500Nm3 per yer multiplied by
+#     the G-gas LCV of 35.17 MJ/Nm3 and divided by 3.6 to yield kWh per hour
+#     (kWh is required for comparison with electricity)
+Liander_G$Profile_Total_average_kWh <- Liander_G$hour_fraction_G * 1500 * 35.17 / 3.6000 

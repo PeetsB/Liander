@@ -12,7 +12,9 @@ options(scipen=999)  # turn off scientific notation like 1e+06
 hm.palette <- colorRampPalette(rev(brewer.pal(11, 'Spectral')), space='Lab')
 ggplot(Liander_E, aes(y=Time, x=Date)) + 
   geom_tile(aes(fill=Profile_Total_average_kWh)) +
-  scale_fill_gradientn(colours = hm.palette(100)) + 
+  scale_fill_gradientn(colours = hm.palette(100),
+#                       limits = c(0, max(Liander_E$Profile_Total_average_kWh, na.rm=T))) + 
+                       limits = c(0, max(Liander_G$Profile_Total_average_kWh, na.rm=T))) + 
   scale_y_continuous(name = "Hour of day", 
                      breaks = seq(0, 23, by=1)) + 
   scale_x_date(name = "Month of year", 

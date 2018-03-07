@@ -25,9 +25,9 @@ if (!require("RColorBrewer")) {
 }
 
 ############ call scripts
-# Liander_E_read_csv.R
+# Liander_G_read_csv.R
 if(!exists("foo", mode="function")) source("Liander_G_read_csv.R")
-# Liander_E_data_cleaning
+# Liander_G_data_cleaning
 if(!exists("foo", mode="function")) source("Liander_G_data_cleaning.R")
-# Liander_E_visualise_heat_map
+# Liander_G_visualise_heat_map
 if(!exists("foo", mode="function")) source("Liander_G_visualise_heat_map.R")
