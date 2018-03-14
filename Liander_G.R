@@ -24,6 +24,12 @@ if (!require("RColorBrewer")) {
   library(RColorBrewer)
 }
 
+# gridExtra: Load the package or install if not present
+if (!require("gridExtra")) {
+  install.packages("gridExtra")
+  library(gridExtra)
+}
+
 ############ call scripts
 # Liander_G_read_csv.R
 if(!exists("foo", mode="function")) source("Liander_G_read_csv.R")
